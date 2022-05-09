@@ -11,37 +11,35 @@ scan_message = receive(sub);
 r_1 = scan_message.Ranges(1:end-1);
 theta_1 = deg2rad([0:359]');
 
-% place Neato at the origin pointing in the ihat_G direction
+% place Neato at the origin pointing in a different direction
+% TODO: you must modify this next line of code!
 placeNeato(0,0,cos(pi/2),sin(pi/2))
 
 % wait a while for the Neato to fall into place
 pause(2);
 
-% Collect data at the room origin
+% Then collect data for the second location
 scan_message = receive(sub);
 r_2 = scan_message.Ranges(1:end-1);
 theta_2 = deg2rad([0:359]');
 
-
-% place Neato at the origin pointing in the ihat_G direction
-placeNeato(1,0,1,0)
+% place Neato at a new position (a,b)_G with ihat_N oriented parallel
+% TODO: you must modify this next line of code!
+placeNeato(0,0,1,0)
 
 % wait a while for the Neato to fall into place
 pause(2);
-
-% Collect data at the room origin
 scan_message = receive(sub);
 r_3 = scan_message.Ranges(1:end-1);
 theta_3 = deg2rad([0:359]');
 
-% place Neato at the origin pointing in the ihat_G direction
-placeNeato(1.5,-2.5, cos(pi/3),sin(pi/3))
+% place Neato at an arbitrary position and orientation
+% TODO: you must modify this next line of code!
+placeNeato(0, -2.5, cos(pi/2), sin(pi/2))
 
 % wait a while for the Neato to fall into place
 pause(2);
-
-% Collect data at the room origin
-scan_message = receive(sub);
+tscan_message = receive(sub);
 r_4 = scan_message.Ranges(1:end-1);
 theta_4 = deg2rad([0:359]');
 

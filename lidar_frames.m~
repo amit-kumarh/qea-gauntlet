@@ -32,7 +32,7 @@ for i = 1:size(origins,1)
     scatter(gframe(1,:), gframe(2,:));
     title(['Scan ',num2str(i)]);
     
-    save(['scan ',num2str(i),'.mat'], 'gframe')
+    save('scan ',num2str(i)
     
     figure(mainfig);
     scatter(gframe(1,:), gframe(2,:));
