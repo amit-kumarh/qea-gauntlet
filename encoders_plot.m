@@ -1,5 +1,5 @@
 hold on
-contour(x,y,v,'k','ShowText','On')
+fcontour(v)
 axis equal
 
 raw = readmatrix('encoders.csv');
@@ -11,9 +11,11 @@ rot = [cos(2*pi/3) sin(2*pi/3); -sin(2*pi/3) cos(2*pi/3)];
 
 points = [L R]';
 rpoints = rot * points;
-
 plot(rpoints(1,:), rpoints(2,:))
+plot(pos(:,1), pos(:,2))
 
-title('Actual Path from Encoder Data')
+
+title('Actual vs Intended Path from Encoder Data')
 xlabel('X Position (m)')
 ylabel('Y Position (m)')
+legend('Gauntlet Equation', 'Actual Path', 'Intended Path')
