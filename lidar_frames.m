@@ -40,6 +40,8 @@ for i = 1:size(origins,1)
     title('All Scans')
 end
 figure(mainfig);
+xlabel('X Position (m)')
+ylabel('Y Position (m)')
     
     
     

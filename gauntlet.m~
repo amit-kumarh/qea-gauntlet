@@ -9,17 +9,15 @@
 %         Drive the robot lambda * magnitude of gradient
 %         Check if we are at the end
 
-% syms x y real
 wheelBase = .235;
-lambda = .001;
+lambda = .01;
 
-f = v
-% [fx, fy] = gradient(v);
-grad = -gradient(f, [x, y]);
+f = v;
+[fx, fy] = gradient(f);
 
 % Start the robot at (1, -1) and facing up
 position = [0; 0];
-heading = [1.5; -1.5];
+heading = [0; 1];
 
 angularSpeed = .6;
 linSpeed = .75;
@@ -34,11 +32,7 @@ placeNeato(position(1), position(2), heading(1), heading(2))
 
 done = false;
 while ~done
-    % round(position(1)*20)/20, round(position(2)*20)/20
-    %t = (x == round(position(1)*20)/20) & (y == round(position(2)*20)/20);
-    %indt = find(t)
-    %g = [fx(indt); fy(indt)]
-    g = double(subs(grad, [x ,y], [position(1), position(2)]));
+    g = [fx(position(1)+2/.05, position(2)+3.5/.05) fy(position(1)+2/.05, position(2)+3.5/.05)]
 
 %     Turning code
     crossProd = cross([heading; 0], [g; 0]);
