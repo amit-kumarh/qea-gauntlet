@@ -19,8 +19,8 @@ theta = pi/4
 global_box_points_2 = [1 0 -0.25; 0 1 -1; 0 0 1] * [cos(theta) sin(theta) 0; -sin(theta) cos(theta) 0; 0 0 1] * box_points;
 global_box_points_3 = [1 0 1; 0 1 -0.7; 0 0 1] * [cos(theta) sin(theta) 0; -sin(theta) cos(theta) 0; 0 0 1] * box_points;
 
-[x,y] = meshgrid(-2:0.05:3, -3.5:0.05:1.5);
-%syms x y
+% [x,y] = meshgrid(-2:0.05:3, -3.5:0.05:1.5);
+syms x y
 
 v1 = 0;
 for i = 1:1:length(global_box_points_1(1,:))
@@ -80,7 +80,6 @@ for a = -1.5:0.01:2.5
 end
 
 v_all_walls = v_wall1 + v_wall2 + v_wall3 + v_wall4;
-
 v = v_total_bob + v_all_walls;
 contour(x, y, v, 20, 'o', 'ShowText', 'Off')
 plot3(x, y, v)

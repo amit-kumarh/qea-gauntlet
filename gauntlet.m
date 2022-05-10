@@ -33,7 +33,7 @@ pause(2)
 placeNeato(position(1), position(2), heading(1), heading(2))
 
 done = false;
-pos = [];
+pos = [0 0];
 while ~done
     % round(position(1)*20)/20, round(position(2)*20)/20
     %t = (x == round(position(1)*20)/20) & (y == round(position(2)*20)/20);
@@ -74,8 +74,3 @@ end
 
 msg.Data = [0, 0];
 send(pub, msg);
-
-
-
-% Final position
-% (0.081, -0.081)
